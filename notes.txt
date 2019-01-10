@@ -8,4 +8,7 @@ curl -o $image $src_image
 virt-install -n $vm_guest_name -r 1024 --vcpus=1 \
     --disk path=$image,size=16 \
     --vnc --noautoconsole --os-type linux --os-variant ubuntu18.04 --import
+    
+echo "exit via crt-shift-]"
+virsh console $vm_guest_name
 
